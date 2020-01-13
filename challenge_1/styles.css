@@ -1,8 +1,12 @@
 body {
     margin: auto;
     text-align: center;
-    background-color: rgb(148, 136, 136);
+    /* background-color: rgb(148, 136, 136); */
+    background-image: url('https://i.ytimg.com/vi/4gmrHQa7fEg/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: Roboto;
+    color: white;
 }
 
 #board {
@@ -10,14 +14,17 @@ body {
     border: solid black 5px;
     height:400px;
     width: 400px;
-    opacity: 0.5;
+    opacity: 0.65;
 }
 
 #scoreboard {
     height: 150px;
     width: 150px;
     margin: auto;
-    color: black;
+}
+
+#scoreboard div {
+    font-style: italic;
 }
 
 table td{

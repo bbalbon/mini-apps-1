@@ -1,6 +1,9 @@
 let globalCounter = 'O';
 
+// Initialize Game Board
 let gameBoard = [[],[],[]];
+let Xwins = document.getElementById('xwins');
+let Owins = document.getElementById('owins');
 
 let squares = document.getElementsByClassName('square');
 
@@ -53,7 +56,8 @@ const addToGameBoard = function (id) {
 const checkWinCondition = function (row, column, player) {
     if (checkRowWin(row) || checkColumnWin(column) || checkMajorDiagonalWin() || checkMinorDiagonalWin()) {
         alert('YOU WIN!');
-        globalCounter = (player === 'X') ? 'O' : 'X';
+        globalCounter = (player.textContent === 'X') ? 'O' : 'X';
+        player.textContent === 'X' ? Xwins.textContent ++ : Owins.textContent ++ ;
         player.style ='background-color:yellow;';
     }
 }

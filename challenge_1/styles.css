@@ -1,0 +1,23 @@
+body {
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    margin:auto;
+    border: solid black 5px;
+    height:400px;
+    width: 400px;
+    border-style: ridge;
+}
+
+
+table td{
+    border:1px solid #FF0000;
+    background-color: white;
+}
+
+td:hover {
+    cursor: pointer;
+}
+

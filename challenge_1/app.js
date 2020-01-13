@@ -15,8 +15,7 @@ const placePiece = function () {
         }
         let add = addToGameBoard.bind(this);
         let coordinates = add(this.id);
-        console.log(coordinates);
-        checkWinCondition(coordinates);
+        checkWinCondition(...coordinates);
     }
 }
 
@@ -45,18 +44,21 @@ const addToGameBoard = function (id) {
     }
 }
 
-const checkWinCondition = function (rowAndColumn) {
-    
+const checkWinCondition = function (row, column) {
+    if (checkRowWin(row) || checkColumnWin(column) || checkDiagonalWin(row, column)) {
+        return true;
+    } else { return false; };
 }
 
-const checkRowWin = function () {
+const checkRowWin = function (row) {
     let cache = {};
-    for (let i = 0; i < gameBoard.length; i++) {
-        let row = gameBoard[i];
-        for (let j = 0; j < row.length; j++) {
-
+    for (let i = 0; i < gameBoard[row].length; i++) {
+        let item = gameBoard[row][i];
+        if (item) {
+            cache.hasOwnProperty(item) ? cache[item] ++ : cache[item] = 1;
         }
     }
+    return cache['X'] > 2 || cache['O'] > 2;
 }
 
 const checkColumnWin = function () {

@@ -4,6 +4,7 @@ let gameBoard = [[],[],[]];
 
 let squares = document.getElementsByClassName('square');
 
+//Single Event Handler
 const placePiece = function () {
     if (!this.textContent) {
         if (globalCounter === 'O') {
@@ -15,7 +16,7 @@ const placePiece = function () {
         }
         let add = addToGameBoard.bind(this);
         let coordinates = add(this.id);
-        checkWinCondition(...coordinates);
+        checkWinCondition(...coordinates, this);
     }
 }
 
@@ -24,14 +25,16 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', placePiece);
 }
 
+// Resets the board
 const resetBoard = function () {
     for (let i = 0; i < squares.length; i++) {
         squares[i].textContent = '';
+        squares[i].style = '';
     }
     gameBoard = [[], [], []];
-    globalCounter = 'O';
 }
 
+// Gets coordinates and updates the 2-D matrix
 const addToGameBoard = function (id) {
     switch (id) {
         case 'topleft' : gameBoard[0][0] = this.textContent; return [0, 0];
@@ -39,16 +42,19 @@ const addToGameBoard = function (id) {
         case 'topright' : gameBoard[0][2] = this.textContent; return [0, 2];
         case 'midleft' : gameBoard[1][0] = this.textContent; return [1, 0];
         case 'midmiddle' : gameBoard[1][1] = this.textContent; return [1, 1];
-        case 'midright' : gameBoard[1][2] =this.textContent; return [1, 2];
+        case 'midright' : gameBoard[1][2] = this.textContent; return [1, 2];
         case 'bottomleft' : gameBoard[2][0] = this.textContent; return [2, 0];
         case 'bottommiddle' : gameBoard[2][1] = this.textContent; return [2, 1];
         case 'bottomright' : gameBoard[2][2] = this.textContent; return [2, 2];
     }
 }
 
-const checkWinCondition = function (row, column) {
+// Checks the various win conditions after a piece is placed
+const checkWinCondition = function (row, column, player) {
     if (checkRowWin(row) || checkColumnWin(column) || checkMajorDiagonalWin() || checkMinorDiagonalWin()) {
-        alert('You WIN!')
+        alert('YOU WIN!');
+        globalCounter = (player === 'X') ? 'O' : 'X';
+        player.style ='background-color:yellow;';
     }
 }
 

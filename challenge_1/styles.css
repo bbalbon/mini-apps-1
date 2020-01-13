@@ -1,22 +1,33 @@
 body {
     margin: auto;
     text-align: center;
+    background-color: rgb(148, 136, 136);
+    font-family: Roboto;
 }
 
-table {
+#board {
     margin:auto;
     border: solid black 5px;
     height:400px;
     width: 400px;
-    border-style: ridge;
+    opacity: 0.5;
 }
 
+#scoreboard {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    color: black;
+}
 
 table td{
     border:1px solid #FF0000;
     background-color: white;
     height: 150px;
     width: 150px;
+    font-size: 55px;
+    font-weight: bold;
+    color: black;
 }
 
 td:hover {

@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='./styles.css' type='text/css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
     <h1>Welcome to Tic-Tac-Toe</h1>
     <h3>Try to best your opponent</h3>
+    <div id='scoreboard'>
+        <h1>Scoreboard</h1>
+        <div>
+            X Wins: <span id='xwins'></span>
+        </div>
+        <div>
+            O Wins: <span id='owins'></span>
+        </div>
+    </div>
     <table id='board'>
         <tr>
             <td class='square' id='topleft'></td>

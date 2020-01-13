@@ -1,13 +1,23 @@
-let square = document.getElementsByClassName('square');
-console.log(square);
+let globalCounter = 'O';
 
-square.addEventListener('click', () => {
-    console.log('hit')
-})
+let squares = document.getElementsByClassName('square');
 
-const placePiece = () => {
-    square.textContent = 'x';
-    let element = document.getElementById(this);
-    console.log(element);
+const placePiece = function () {
+    if (globalCounter === 'O') {
+        this.textContent = 'X';
+        globalCounter = 'X';
+    } else {
+        this.textContent = 'O';
+        globalCounter = 'O';
+    }
 }
 
+const resetBoard = function () {
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].textContent = '';
+    }
+}
+
+for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('click', placePiece);
+}

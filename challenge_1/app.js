@@ -35,7 +35,7 @@ const addToGameBoard = function (id) {
         case 'topleft' : gameBoard[0][0] = this.textContent; return [0, 0];
         case 'topmiddle' : gameBoard[0][1] = this.textContent; return [0, 1];
         case 'topright' : gameBoard[0][2] = this.textContent; return [0, 2];
-        case 'midright' : gameBoard[1][0] = this.textContent; return [1, 0];
+        case 'midleft' : gameBoard[1][0] = this.textContent; return [1, 0];
         case 'midmiddle' : gameBoard[1][1] = this.textContent; return [1, 1];
         case 'midright' : gameBoard[1][2] =this.textContent; return [1, 2];
         case 'bottomleft' : gameBoard[2][0] = this.textContent; return [2, 0];
@@ -46,8 +46,8 @@ const addToGameBoard = function (id) {
 
 const checkWinCondition = function (row, column) {
     if (checkRowWin(row) || checkColumnWin(column) || checkDiagonalWin(row, column)) {
-        return true;
-    } else { return false; };
+        alert('You WIN!')
+    }
 }
 
 const checkRowWin = function (row) {
@@ -61,8 +61,15 @@ const checkRowWin = function (row) {
     return cache['X'] > 2 || cache['O'] > 2;
 }
 
-const checkColumnWin = function () {
-
+const checkColumnWin = function (column) {
+    let cache = {};
+    for (let i = 0; i < gameBoard.length; i++) {
+        let position = gameBoard[i][column];
+        if (position) {
+            cache.hasOwnProperty(position) ? cache[position] ++ : cache[position] = 1;
+        }
+    }
+    return cache['X'] > 2 || cache['O'] > 2;
 }
 
 const checkDiagonalWin = function () {

@@ -19,6 +19,7 @@ const placePiece = function () {
     }
 }
 
+// Add event listener to all square elements
 for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', placePiece);
 }
@@ -28,6 +29,7 @@ const resetBoard = function () {
         squares[i].textContent = '';
     }
     gameBoard = [[], [], []];
+    globalCounter = 'O';
 }
 
 const addToGameBoard = function (id) {
@@ -45,7 +47,7 @@ const addToGameBoard = function (id) {
 }
 
 const checkWinCondition = function (row, column) {
-    if (checkRowWin(row) || checkColumnWin(column) || checkDiagonalWin(row, column)) {
+    if (checkRowWin(row) || checkColumnWin(column) || checkMajorDiagonalWin() || checkMinorDiagonalWin()) {
         alert('You WIN!')
     }
 }
@@ -72,6 +74,20 @@ const checkColumnWin = function (column) {
     return cache['X'] > 2 || cache['O'] > 2;
 }
 
-const checkDiagonalWin = function () {
+const checkMajorDiagonalWin = function () {
+    let left = (gameBoard[0][0] === undefined) ? null : gameBoard[0][0];
+    let middle = (gameBoard[1][1] === undefined) ? null : gameBoard[1][1];
+    let right = (gameBoard[2][2] === undefined) ? null : gameBoard[2][2];
+    if (left && middle && right) {
+        return ((left === 'X' && middle === 'X' && right === 'X') || (left === 'O' && middle === 'O' && right === 'O'));
+    }
+}
 
+const checkMinorDiagonalWin = function () {
+    let left = (gameBoard[2][0] === undefined) ? null : gameBoard[2][0];
+    let middle = (gameBoard[1][1] === undefined) ? null : gameBoard[1][1];
+    let right = (gameBoard[0][2] === undefined) ? null : gameBoard[0][2];
+    if (left && middle && right) {
+        return ((left === 'X' && middle === 'X' && right === 'X') || (left === 'O' && middle === 'O' && right === 'O'));
+    }
 }

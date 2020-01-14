@@ -31,17 +31,11 @@ for (let i = 0; i < state.squares.length; i++) {
 
 // Gets coordinates and updates the 2-D matrix
 const addToGameBoard = function (id) {
-    switch (id) {
-        case 'topleft' : state.gameBoard[0][0] = this.textContent; return [0, 0];
-        case 'topmiddle' : state.gameBoard[0][1] = this.textContent; return [0, 1];
-        case 'topright' : state.gameBoard[0][2] = this.textContent; return [0, 2];
-        case 'midleft' : state.gameBoard[1][0] = this.textContent; return [1, 0];
-        case 'midmiddle' : state.gameBoard[1][1] = this.textContent; return [1, 1];
-        case 'midright' : state.gameBoard[1][2] = this.textContent; return [1, 2];
-        case 'bottomleft' : state.gameBoard[2][0] = this.textContent; return [2, 0];
-        case 'bottommiddle' : state.gameBoard[2][1] = this.textContent; return [2, 1];
-        case 'bottomright' : state.gameBoard[2][2] = this.textContent; return [2, 2];
-    }
+    let row = parseInt(id.slice(0, 1));
+    let column = parseInt(id.slice(1));
+
+    state.gameBoard[row][column] = this.textContent;
+    return[row, column];
 };
 
 // Checks the various win conditions after a piece is placed

@@ -1,3 +1,4 @@
+//State to hold functionality
 let state = {
     globalCounter: 'O',
     piecesPlaced: 0,

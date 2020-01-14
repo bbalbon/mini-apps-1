@@ -11,9 +11,10 @@
   <body>
     <h1>Welcome to JSON-CSV converter</h1>
     <div id="app">
-      <form>
-        <input type='text'><button>Submit</button>
-      </form>
+        <form action="/upload_json" method="post">
+          <input type='text' id='formdata'>
+          <input type="submit" value="Submit">
+        </form>
     </div>
     <script src="app.js"></script>
   </body>

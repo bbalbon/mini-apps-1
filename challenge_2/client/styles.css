@@ -3,3 +3,8 @@ body {
   text-align: center;
   font-family: Roboto;
 }
+
+#formdata {
+  height: 240px;
+  width: 300px;
+}

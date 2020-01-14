@@ -4,9 +4,9 @@ const port = 3000;
 
 app.use(express.static(__dirname + '/../client'));
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+const router = require('./serverRoutes.js');
+
+app.use(router);
 
 app.listen(port, () => {
   console.log(`Chicken App listening on port ${port}!`);

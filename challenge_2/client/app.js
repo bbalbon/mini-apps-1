@@ -1,2 +1,3 @@
-let form = document.getElementById('input');
+let form = document.getElementById('formdata');
+
 

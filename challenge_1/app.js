@@ -17,8 +17,7 @@ const placePiece = function () {
             this.textContent = 'O';
             state.globalCounter = 'O';
         }
-        let add = addToGameBoard.bind(this);
-        let coordinates = add(this.id);
+        let coordinates = addToGameBoard.bind(this)(this.id);
         checkWinCondition(...coordinates, this);
         state.piecesPlaced ++;
     }

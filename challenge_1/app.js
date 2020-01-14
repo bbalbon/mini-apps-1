@@ -7,7 +7,7 @@ let state = {
     Owins: document.getElementById('owins')
 }
 
-//Single Event Handler
+//Single Event Handler and State Modifier
 const placePiece = function () {
     if (!this.textContent) {
         if (state.globalCounter === 'O') {
@@ -28,16 +28,6 @@ const placePiece = function () {
 for (let i = 0; i < state.squares.length; i++) {
     state.squares[i].addEventListener('click', placePiece);
 }
-
-// Resets the board
-const resetBoard = function () {
-    for (let i = 0; i < state.squares.length; i++) {
-        state.squares[i].textContent = '';
-        state.squares[i].style = '';
-    }
-    state.gameBoard = [[], [], []];
-    state.piecesPlaced = 0;
-};
 
 // Gets coordinates and updates the 2-D matrix
 const addToGameBoard = function (id) {
@@ -107,4 +97,14 @@ const checkMinorDiagonalWin = function () {
     if (left && middle && right) {
         return ((left === 'X' && middle === 'X' && right === 'X') || (left === 'O' && middle === 'O' && right === 'O'));
     }
+};
+
+// Resets the board
+const resetBoard = function () {
+    for (let i = 0; i < state.squares.length; i++) {
+        state.squares[i].textContent = '';
+        state.squares[i].style = '';
+    }
+    state.gameBoard = [[], [], []];
+    state.piecesPlaced = 0;
 };

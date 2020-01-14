@@ -1,7 +1,6 @@
 body {
     margin: auto;
     text-align: center;
-    /* background-color: rgb(148, 136, 136); */
     background-image: url('https://i.ytimg.com/vi/4gmrHQa7fEg/maxresdefault.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,6 +43,7 @@ td:hover {
 button {
     height: 50px;
     width: 100px;
+    border-radius: 15px;
 }
 
 button:hover {

@@ -1,3 +1,6 @@
-let form = document.getElementById('formdata');
-
-
+$(document).ready(function () {
+  $('#clear').on('click', (event) => {
+    event.preventDefault();
+    $('#formdata').val('');
+  })
+})

@@ -7,14 +7,18 @@
     <link href='./styles.css' type='text/css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>JSON-CSV converter</title>
+    <script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   </head>
   <body>
     <h1>Welcome to JSON-CSV converter</h1>
     <div id="app">
         <form action="/upload_json" method="post">
           <textarea name="input" type='text' id='formdata'></textarea>
-          <input type="submit" value="Submit">
-        </form>
+          <input type="submit" value="Submit" id='textsubmit'>
+        </form><button id="clear">Clear</button>
     </div>
     <script src="app.js"></script>
   </body>

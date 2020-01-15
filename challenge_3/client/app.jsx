@@ -15,6 +15,12 @@ class App extends React.Component {
     })
   }
 
+  goHome () {
+    this.setState({
+      currentPage: 'homePage'
+    })
+  }
+
   render () {
     return (
       <div id="page">
@@ -22,9 +28,10 @@ class App extends React.Component {
           <h1>BuyTingsMon</h1>
         </div>
         <div id="main">
+          {if ()}
           <Main page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>
         </div>
-        <button id="home">Home</button><button id="checkout">Checkout</button>
+        <button id="home" onClick={this.goHome}>Home</button><button id="checkout">Checkout</button>
       </div>
     )
   }

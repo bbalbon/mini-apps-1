@@ -18,11 +18,8 @@ const F1 = (props) => (
       </label>
     </form>
     <br />
-    <button id="checkout/home" onClick={() => {
-      props.changePage('F2');
-    }}>Next</button>
+    <button id="checkout/home" onClick={() => props.changePage('F2')}>Next</button>
   </div>
-
 )
 
 export default F1;

@@ -3,6 +3,11 @@ const F2 = (props) => (
     <h1>Enter your shipping info</h1>
     <form >
       <label>
+        Address Line 1:
+        <input type='text'/>
+      </label>
+      <br />
+      <label>
         City:
         <input type='text'/>
       </label>
@@ -18,9 +23,8 @@ const F2 = (props) => (
       </label>
     </form>
     <br />
-    <button id="checkout/home" onClick={() => props.changePage()}>Next</button>
+    <button id="checkout/home" onClick={() => props.changePage('F3')}>Next</button>
   </div>
-
 )
 
 export default F2;

@@ -7,20 +7,13 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentPage: 'homePage',
-      pages: ['homePage', 'F1', 'F2', 'F3']
+      currentPage: 'homePage'
     }
   }
 
   nextPage (page) {
     this.setState({
       currentPage: page
-    })
-  }
-
-  goHome () {
-    this.setState({
-      currentPage: 'homePage'
     })
   }
 
@@ -32,7 +25,7 @@ class App extends React.Component {
           <h1>BuyTingsMon</h1>
         </div>
         <div id="main">
-          { state === 'homePage' ? (<HomePage page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F1' ? (<F1 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F2' ? (<F2 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : (<F3 page={this.state.currentPage} goHome={this.goHome.bind(this)}/>)}
+          { state === 'homePage' ? (<HomePage page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F1' ? (<F1 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F2' ? (<F2 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : (<F3 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>)}
         </div>
       </div>
     )

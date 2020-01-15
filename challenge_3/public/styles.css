@@ -11,9 +11,13 @@ body {
 
 #main {
   margin: auto;
+  text-align: center;
+}
+
+#homepage {
+  margin: auto;
   height: 300px;
   width: 300px;
-  text-align: center;
 }
 
 button {
@@ -28,4 +32,16 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+label {
+  display: inline-block;
+  float: center;
+  clear: left;
+  width: 250px;
+  text-align: left;
+}
+
+input {
+  float: right;
 }

@@ -8,7 +8,7 @@ const F3 = (props) => (
       </label>
       <br />
       <label>
-        Expirt Date:
+        Expiry Date:
         <input type='text'/>
       </label>
       <br />
@@ -16,11 +16,15 @@ const F3 = (props) => (
         CVV:
         <input type='text'/>
       </label>
+      <br />
+      <label>
+        Billing Zip Code:
+        <input type='text'/>
+      </label>
     </form>
     <br />
-    <button id="checkout/home" onClick={() => props.goHome()}>Home</button>
+    <button id="checkout/home" onClick={() => props.changePage('homePage')}>Confirm Order</button>
   </div>
-
 )
 
 export default F3;

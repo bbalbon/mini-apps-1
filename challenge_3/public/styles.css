@@ -1,4 +1,25 @@
 body {
   margin: auto;
-  text-align: center; 
+  text-align: center;
+  font-family: Roboto;
+}
+
+#main {
+  margin: auto;
+  height: 300px;
+  width: 300px;
+}
+
+button {
+  width: 150px;
+  height: 28px;
+  background-color: orange;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+button:hover {
+  cursor: pointer;
 }

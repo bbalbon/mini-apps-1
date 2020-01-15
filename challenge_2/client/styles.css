@@ -2,13 +2,26 @@ body {
   margin: auto;
   text-align: center;
   font-family: Roboto;
+  background-color: bisque;
 }
 
 #formdata {
-  height: 240px;
+  height: 400px;
   width: 300px;
 }
 
 #clear {
   margin: auto;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  height: 35px;
+  width: 55px;
+}
+
+.button:hover {
+  cursor: pointer;
 }

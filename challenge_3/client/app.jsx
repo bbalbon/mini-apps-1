@@ -1,4 +1,7 @@
-import Main from './main.js';
+import HomePage from './homepage.js';
+import F1 from './f1.js';
+import F2 from './f2.js';
+import F3 from './f3.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,16 +25,15 @@ class App extends React.Component {
   }
 
   render () {
+    const state = this.state.currentPage;
     return (
       <div id="page">
         <div id="header">
           <h1>BuyTingsMon</h1>
         </div>
         <div id="main">
-          {if ()}
-          <Main page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>
+          { state === 'homePage' ? (<HomePage page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F1' ? (<F1 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F2' ? (<F2 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : (<F3 page={this.state.currentPage} goHome={this.goHome.bind(this)}/>)}
         </div>
-        <button id="home" onClick={this.goHome}>Home</button><button id="checkout">Checkout</button>
       </div>
     )
   }

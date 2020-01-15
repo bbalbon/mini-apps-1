@@ -4,10 +4,16 @@ body {
   font-family: Roboto;
 }
 
+#header h1 {
+  color: orange;
+  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
+}
+
 #main {
   margin: auto;
   height: 300px;
   width: 300px;
+  text-align: center;
 }
 
 button {

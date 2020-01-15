@@ -6,6 +6,7 @@ const convertus = (jsonData) => {
     }
   }
   let result = [];
+
   const traverseTree = (node) => {
     currentString = [];
     for (let key in node) {
@@ -28,6 +29,7 @@ const convertus = (jsonData) => {
       })
     }
   }
+
   traverseTree(jsonData);
   result.unshift(headers.join(','));
   return result.join('\n');

@@ -34,7 +34,7 @@ button:hover {
   cursor: pointer;
 }
 
-label {
+label, ul {
   display: inline-block;
   float: center;
   clear: left;

@@ -23,7 +23,7 @@ const F3 = (props) => (
       </label>
     </form>
     <br />
-    <button id="checkout/home" onClick={() => props.changePage('homePage')}>Confirm Order</button>
+    <button id="checkout/home" onClick={() => props.changePage('summary')}>Go To Summary</button>
   </div>
 )
 

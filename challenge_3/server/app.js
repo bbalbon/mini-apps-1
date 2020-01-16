@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const parser = require('body-parser');
+const controller = require('./controller.js');
 
 app.use(express.static(__dirname + '/../public'));
 app.use(parser.json());

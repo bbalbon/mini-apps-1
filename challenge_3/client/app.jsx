@@ -27,10 +27,16 @@ class App extends React.Component {
   }
 
   submitOrder () {
-
+    $.ajax({
+      type: 'POST',
+      url: '/submit_order',
+      data: JSON.stringify(this.state.summary),
+      contentType: 'application/json'
+    })
   }
 
   render () {
+    React.createElement(HomePage, {}, )
     const state = this.state.currentPage;
     return (
       <div id="page">

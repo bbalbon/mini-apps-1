@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js",
+    "start": "nodemon server/app.js",
     "compile": "./node_modules/.bin/babel --watch client --out-dir public --presets @babel/preset-react --source-maps inline"
   },
   "author": "",

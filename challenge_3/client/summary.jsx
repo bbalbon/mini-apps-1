@@ -9,9 +9,8 @@ const Summary = (props) => (
       )}
     </ul>
     <br />
-    <button id="checkout/home" onClick={() => props.changePage('homePage')}>Confirm Order</button>
+    <button id="checkout/home" onClick={() => {props.changePage('homePage'); props.submitOrder();}}>Confirm Order</button>
   </div>
 )
-
 
 export default Summary;

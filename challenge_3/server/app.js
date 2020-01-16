@@ -7,7 +7,8 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 })
 
-app.post('/', (req, res) => {
+app.post('/submit_order', (req, res) => {
+  
   res.send();
 })
 

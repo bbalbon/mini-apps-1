@@ -1,15 +1,17 @@
+import SummaryItem from './summaryitem.js';
+
 const Summary = (props) => (
   <div id="summary">
-    <h1>Summary of your order</h1>
+    <h1>Details of your order</h1>
     <ul>
-      <li>Hi I'm an item you added</li>
-      <li>Hi I'm an item you added</li>
-      <li>Hi I'm an item you added</li>
-      <li>Hi I'm an item you added</li>
+      {Object.keys(props.orderDetails).map((identifier, i) =>
+        <SummaryItem key={i} field={identifier} value={props.orderDetails[identifier]} />
+      )}
     </ul>
     <br />
     <button id="checkout/home" onClick={() => props.changePage('homePage')}>Confirm Order</button>
   </div>
 )
+
 
 export default Summary;

@@ -24,7 +24,10 @@ class App extends React.Component {
     this.setState({
       summary : newValue
     })
-    console.log(this.state.summary);
+  }
+
+  submitOrder () {
+
   }
 
   render () {
@@ -35,7 +38,7 @@ class App extends React.Component {
           <h1>BuyTingsMon</h1>
         </div>
         <div id="main">
-          { state === 'homePage' ? (<HomePage page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F1' ? (<F1 page={this.state.currentPage} changePage={this.nextPage.bind(this)} updateSum={this.updateFormProps.bind(this)}/>) : state === 'F2' ? (<F2 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : state === 'F3' ? (<F3 page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>) : (<Summary page={this.state.currentPage} changePage={this.nextPage.bind(this)}/>)}
+          { state === 'homePage' ? (<HomePage changePage={this.nextPage.bind(this)}/>) : state === 'F1' ? (<F1 changePage={this.nextPage.bind(this)} updateSum={this.updateFormProps.bind(this)}/>) : state === 'F2' ? (<F2 changePage={this.nextPage.bind(this)} updateSum={this.updateFormProps.bind(this)}/>) : state === 'F3' ? (<F3 changePage={this.nextPage.bind(this)} updateSum={this.updateFormProps.bind(this)}/>) : (<Summary orderDetails={this.state.summary} changePage={this.nextPage.bind(this)} submitOrder={this.submitOrder.bind(this)}/>)}
         </div>
       </div>
     )

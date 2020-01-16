@@ -3,8 +3,8 @@ import Square from './square.jsx';
 
 const Row = (props) => (
   <tr className="row">
-    {props.boardRow.map((column, i) => (
-      <Square key={i} column={column} columnIndex={i} rowIndex={props.rowIndex} updateBoard={props.updateBoard}/>
+    {props.boardRow.map((columnValue, i) => (
+      <Square key={i} column={columnValue} columnIndex={i} rowIndex={props.rowIndex} updateBoard={props.updateBoard} turn={props.turn}/>
     ))}
   </tr>
 )

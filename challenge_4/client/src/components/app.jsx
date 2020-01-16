@@ -10,15 +10,18 @@ class App extends Component {
               [0, 0, 0, 0, 0, 0, 0],
               [0, 0, 0, 0, 0, 0, 0],
               [0, 0, 0, 0, 0, 0, 0],
-              [0, 0, 0, 0, 0, 0, 0]]
+              [0, 0, 0, 0, 0, 0, 0]],
+      turn: 1
     }
   }
 
   updateBoard (x, y, value) {
-    newBoard = this.state.board;
+    const newBoard = this.state.board;
     newBoard[x][y] = value;
+    const newValue = value === 1 ? 2 : 1;
     this.setState({
-      board: newBoard
+      board: newBoard,
+      turn: newValue
     })
   }
 
@@ -29,7 +32,7 @@ class App extends Component {
         <table id="board">
         <tbody>
           {this.state.board.map((row, i) => (
-            <Row key={i} rowIndex={i} boardRow={row} updateBoard={this.updateBoard.bind(this)}/>
+            <Row key={i} rowIndex={i} boardRow={row} updateBoard={this.updateBoard.bind(this)} turn={this.state.turn}/>
           ))}
         </tbody>
       </table>

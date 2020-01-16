@@ -2,6 +2,7 @@ body {
   margin: auto;
   text-align: center;
   font-family: Roboto;
+  background-color: whitesmoke;
 }
 
 table {
@@ -14,4 +15,8 @@ table {
 
 table td {
   border: 1px solid;
+}
+
+.square {
+  border-radius: 60px;
 }

@@ -36,7 +36,6 @@ class App extends React.Component {
   }
 
   render () {
-    React.createElement(HomePage, {}, )
     const state = this.state.currentPage;
     return (
       <div id="page">

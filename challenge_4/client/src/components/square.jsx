@@ -9,12 +9,15 @@ class Square extends Component {
   }
 
   toggleColor() {
-    
   }
 
-
+  render () {
+    const id= `${this.props.rowIndex}${this.props.columnIndex}`
+    return  (
+      <td className="square" id={`${id}`}>
+      </td>
+    )
+  }
 }
-
-
 
 export default Square;

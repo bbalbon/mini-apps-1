@@ -1,0 +1,17 @@
+body {
+  margin: auto;
+  text-align: center;
+  font-family: Roboto;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid;
+  height: 400px;
+  width: 400px;
+  margin: auto;
+}
+
+table td {
+  border: 1px solid;
+}

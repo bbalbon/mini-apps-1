@@ -2,10 +2,11 @@
   "name": "challenge_4",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build" : "webpack"
   },
   "author": "",
   "license": "ISC",

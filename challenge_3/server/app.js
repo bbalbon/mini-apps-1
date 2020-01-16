@@ -10,10 +10,7 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 })
 
-app.post('/submit_order', (req, res) => {
-  console.log(req.body);
-  res.send();
-})
+app.post('/submit_order', controller.post);
 
 app.listen(3000, () => {
   console.log(`App listening on port 3000`);

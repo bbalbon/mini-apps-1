@@ -67,21 +67,22 @@ class App extends Component {
   }
 
   checkMajorDiagonalWin (player) {
-    let row = 0;
     let count = 0;
     for (let i = -2; i < 7; i++) {
-      for (let j = -2; j < 7; j++) {
-        if (this.state.board[row][j] !== undefined && this.state.board[row][j] === player) {
-          count ++;
-        } else {
-          count = 0;
+      let column = i;
+      for (let j = 0; j < 6; j++) {
+        if (column >= 0) {
+          if (this.state.board[j][column] === player) {
+            count ++;
+          } else {
+            count = 0;
+          }
+          if (count === 4) {
+            return true;
+          }
         }
-        if (count === 4) {
-          return true;
-        }
-        row ++;
+        column ++;
       }
-      row = 0;
     }
   }
 

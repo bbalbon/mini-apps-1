@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   checkWin (rowIndex, columnIndex, player) {
-    if (this.checkRowWin(rowIndex, player) || this.checkColumnWin(columnIndex, player)) {
+    if (this.checkRowWin(rowIndex, player) || this.checkColumnWin(columnIndex, player) || this.checkMajorDiagonalWin(player)) {
       alert('YOU WIN');
       setTimeout(() => {
         window.location.reload(true);
@@ -66,15 +66,22 @@ class App extends Component {
     }
   }
 
-  checkMajorDiagonalWin (rowIndex, columnIndex, player) {
+  checkMajorDiagonalWin (player) {
+    let row = 0;
     let count = 0;
-    for (let i = rowIndex; i < this.state.board.length; i++) {
-      let row = this.board.state[i];
-      row[columnIndex] === player ? count ++ : count = 0;
-      columnIndex ++;
-      if (count === 4) {
-        return true;
+    for (let i = -2; i < 7; i++) {
+      for (let j = -2; j < 7; j++) {
+        if (this.state.board[row][j] !== undefined && this.state.board[row][j] === player) {
+          count ++;
+        } else {
+          count = 0;
+        }
+        if (count === 4) {
+          return true;
+        }
+        row ++;
       }
+      row = 0;
     }
   }
 

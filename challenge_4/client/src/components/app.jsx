@@ -38,6 +38,9 @@ class App extends Component {
   checkWin (rowIndex, columnIndex, player) {
     if (this.checkRowWin(rowIndex, player) || this.checkColumnWin(columnIndex, player)) {
       alert('YOU WIN');
+      setTimeout(() => {
+        window.location.reload(true);
+      }, 1000)
     }
   }
 

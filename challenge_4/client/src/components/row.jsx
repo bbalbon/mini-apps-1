@@ -4,7 +4,7 @@ import Square from './square.jsx';
 const Row = (props) => (
   <tr className="row">
     {props.boardRow.map((columnValue, i) => (
-      <Square key={i} column={columnValue} columnIndex={i} rowIndex={props.rowIndex} updateBoard={props.updateBoard} turn={props.turn}/>
+      <Square key={i} columnIndex={i} rowIndex={props.rowIndex} updateBoard={props.updateBoard} turn={props.turn} checkMove={props.checkMove}/>
     ))}
   </tr>
 )

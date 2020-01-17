@@ -10,11 +10,9 @@ class Square extends Component {
   }
 
   toggleColor () {
-    if (!this.state.player) {
-      this.setState({
-        player: this.props.turn
-      })
-    }
+    this.setState({
+      player: this.props.turn
+    })
   }
 
   render () {
@@ -22,8 +20,11 @@ class Square extends Component {
     const style = !this.state.player ? 'white' : this.state.player === 1 ? 'gold' : 'black';
     return  (
       <td className="square" id={`${id}`} style={{'backgroundColor': `${style}`}} onClick={() => {
-        this.props.updateBoard(this.props.rowIndex, this.props.columnIndex, this.props.turn);
-        this.toggleColor();
+        let valid = this.props.checkMove(this.props.rowIndex, this.props.columnIndex);
+        if (valid) {
+          this.props.updateBoard(this.props.rowIndex, this.props.columnIndex, this.props.turn);
+          this.toggleColor();
+        }
       }}>
       </td>
     )

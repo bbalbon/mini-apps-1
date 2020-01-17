@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   checkWin (rowIndex, columnIndex, player) {
-    if (this.checkRowWin(rowIndex, player) || this.checkColumnWin(columnIndex, player) || this.checkMajorDiagonalWin(player)) {
+    if (this.checkRowWin(rowIndex, player) || this.checkColumnWin(columnIndex, player) || this.checkMajorDiagonalWin(player) || this.checkMinorDiagonalWin(player)) {
       alert('YOU WIN');
       setTimeout(() => {
         window.location.reload(true);
@@ -85,6 +85,27 @@ class App extends Component {
       }
     }
   }
+
+  checkMinorDiagonalWin (player) {
+    let count = 0;
+    for (let i = -2; i < 7; i++) {
+      let column = i;
+      for (let j = 5; j >= 0; j--) {
+        if (column >= 0) {
+          if (this.state.board[j][column] === player) {
+            count ++;
+          } else {
+            count = 0;
+          }
+          if (count === 4) {
+            return true;
+          }
+        }
+        column ++;
+      }
+    }
+  }
+
 
   render () {
     return (

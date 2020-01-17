@@ -40,7 +40,7 @@ class App extends Component {
       alert('YOU WIN');
       setTimeout(() => {
         window.location.reload(true);
-      }, 1000)
+      }, 500)
     }
   }
 
@@ -72,12 +72,12 @@ class App extends Component {
         <h1>Welcome to Connect 4!</h1>
         <h3 id="turncounter">It is the {this.state.turn === 1 ? 'YELLOW' : 'BLACK'} player's turn</h3>
         <table id="board">
-        <tbody>
-          {this.state.board.map((row, i) => (
-            <Row key={i} rowIndex={i} boardRow={row} updateBoard={this.updateBoard.bind(this)} turn={this.state.turn} checkMove={this.isValidMove.bind(this)} checkWin={this.checkWin.bind(this)}/>
-          ))}
-        </tbody>
-      </table>
+          <tbody>
+            {this.state.board.map((row, i) => (
+              <Row key={i} rowIndex={i} boardRow={row} updateBoard={this.updateBoard.bind(this)} turn={this.state.turn} checkMove={this.isValidMove.bind(this)} checkWin={this.checkWin.bind(this)}/>
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   }

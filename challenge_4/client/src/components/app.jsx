@@ -66,6 +66,18 @@ class App extends Component {
     }
   }
 
+  checkMajorDiagonalWin (rowIndex, columnIndex, player) {
+    let count = 0;
+    for (let i = rowIndex; i < this.state.board.length; i++) {
+      let row = this.board.state[i];
+      row[columnIndex] === player ? count ++ : count = 0;
+      columnIndex ++;
+      if (count === 4) {
+        return true;
+      }
+    }
+  }
+
   render () {
     return (
       <div id="main">

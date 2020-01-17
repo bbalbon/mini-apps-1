@@ -17,12 +17,15 @@ class Square extends Component {
 
   render () {
     const id= `${this.props.rowIndex}${this.props.columnIndex}`;
+    const rowIndex = this.props.rowIndex;
+    const columnIndex = this.props.columnIndex;
     const style = !this.state.player ? 'white' : this.state.player === 1 ? 'gold' : 'black';
     return  (
       <td className="square" id={`${id}`} style={{'backgroundColor': `${style}`}} onClick={() => {
-        let valid = this.props.checkMove(this.props.rowIndex, this.props.columnIndex);
-        if (valid) {
-          this.props.updateBoard(this.props.rowIndex, this.props.columnIndex, this.props.turn);
+        let valid = this.props.checkMove(rowIndex, columnIndex);
+        if (valid && !this.state.player) {
+          this.props.updateBoard(rowIndex, columnIndex, this.props.turn);
+          this.props.checkWin(rowIndex, columnIndex, this.props.turn);
           this.toggleColor();
         }
       }}>

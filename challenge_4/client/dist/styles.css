@@ -20,3 +20,7 @@ table td {
 .square {
   border-radius: 60px;
 }
+
+.square:hover {
+  cursor: pointer;
+}
